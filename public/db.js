@@ -1,5 +1,4 @@
 let db;
-
 // Create a new db request for budget tracker database
 const request = indexedDB.open("budget", 1);
 
@@ -25,10 +24,8 @@ request.onerror = function(event) {
 function saveRecord(record) {
   // Create a transaction on pending db with readwrite access
   const transaction = db.transaction(["pending"], "readwrite");
-
   // Access pending object store
   const store = transaction.objectStore("pending");
-
   // Add record to store
   store.add(record);
 }
@@ -56,10 +53,8 @@ function checkDatabase() {
       .then(() => {
         // Open a transaction on pending db
         const transaction = db.transaction(["pending"], "readwrite");
-
         // Access pending object store
         const store = transaction.objectStore("pending");
-
         // Clear all items i
         store.clear();
       });
