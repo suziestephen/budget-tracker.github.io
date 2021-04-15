@@ -1,6 +1,3 @@
-# budget-tracker.github.io
-
-
 # Budget Tracker
 
   # Description
